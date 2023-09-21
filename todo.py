@@ -7,10 +7,11 @@ header.resizable(False,False)
 header.config(bg='#223441')
 
 task=[]
+a=[]
 def addtask():
     task=my_task.get()
     if task!="":
-        lb.insert(END,task)
+        a.append(lb.insert(END,task))
         my_task.delete(0,"end")         # used to empty the entry box after inserting task
     else:
         messagebox.showwarning("warning","Task empty!!!")
@@ -25,7 +26,7 @@ lb = Listbox(
     frame,
     width=30,  
     height=8,
-    font=('Arial',14),
+    font=('Arial',16),
     bd=0,
     fg='#464646',
     selectbackground='#a6a6a6',
@@ -42,11 +43,12 @@ sb.config(command=lb.yview)
 
 my_task=Entry(
     header,
-    font=('Arial',23)
+    font=('Arial',23),
+    
     
     
 )
-my_task.pack(pady=20)
+my_task.pack(pady=30)
 button_frame=Frame(header)
 button_frame.pack(pady=20)
 
@@ -73,5 +75,7 @@ delete_button=Button(
     command=delete_task
 )
 delete_button.pack(fill=BOTH, side=RIGHT)
+
+
 
 header.mainloop()
