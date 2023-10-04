@@ -16,10 +16,10 @@ while loop:
     print("2: Moderate")
     print("3: Hard")
 
-    level = int(input("Level: "))
+    level = int(input("Level:  "))
     if level==1:
         s = s1 + s2
-        length = int(input("Enter length of password"))
+        length = int(input("Enter length of password: "))
         if length==0:
             break
         password = "".join(random.sample(s,length))
